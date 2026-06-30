@@ -1,0 +1,49 @@
+<html lang="en"><head></head><body>```
+
+
+
+<meta charset="UTF-8">
+<title>Login &amp; Register</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+  .container { width: 300px; margin: auto; padding: 20px; border: 1px solid #ccc; }
+  input[type=text], input[type=password] { width: 100%; padding: 12px 20px; margin: 8px 0; display: inline-block; border: 1px solid #ccc; box-sizing: border-box; }
+  button { background-color: #4CAF50; color: white; padding: 14px 20px; margin: 8px 0; border: none; cursor: pointer; width: 100%; }
+  button:hover { opacity: 0.8; }
+  h2 { color: red; } /* 修改标题颜色为红色 */
+</style>
+
+
+<div id="app" class="container editor-highlight" style="background-color: rgb(255, 255, 255);"><h2 class="" style="background-color: rgb(255, 255, 255);">Login</h2> <input type="text" placeholder="Username"> <input type="password" placeholder="Password"> <button>Login</button></div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    mode: 'login',
+    title: 'Login',
+    buttonText: 'Login',
+    username: '',
+    password: ''
+  },
+  methods: {
+    handleClick() {
+      if (this.mode === 'login') {
+        console.log('Logging in...');
+        // Add your login API call here
+      } else {
+        console.log('Registering...');
+        // Add your register API call here
+      }
+    },
+    switchMode() {
+      this.mode = this.mode === 'login' ? 'register' : 'login';
+      this.title = this.mode.charAt(0).toUpperCase() + this.mode.slice(1);
+      this.buttonText = this.mode.charAt(0).toUpperCase() + this.mode.slice(1);
+    }
+  }
+});
+</script>
+
+
+```</body></html>
